@@ -1,0 +1,34 @@
+.locations-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(100vh - 120px);
+    right: 20px;
+    z-index: 100;
+    animation: fadeIn 3s;
+    box-shadow: 0 0 25px red;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: .8;
+}
+
+.locations-btn span {
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

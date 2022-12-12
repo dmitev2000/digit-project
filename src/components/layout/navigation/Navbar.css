@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    background-color: transparent;
+    padding: 5px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 1.5s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    list-style-type: none;
+}
+
+nav img {
+    max-height: 80px;
+}
+
