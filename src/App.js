@@ -3,6 +3,7 @@ import Navbar from './components/layout/navigation/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import MenuPage from './components/pages/MenuPage';
+import Footer from './components/layout/footer/Footer';
 //import Popup from './components/ui/popup/Popup';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/menu' element={<MenuPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

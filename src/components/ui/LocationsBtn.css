@@ -6,7 +6,7 @@
     top: calc(100vh - 120px);
     right: 20px;
     /* animation: fadeIn 3s; */
-    box-shadow: 0 0 25px red;
+    box-shadow: 0 0 25px #04AA6D;
     border-radius: 15px;
     padding: 10px 20px 10px 10px;
     opacity: .8;

@@ -16,3 +16,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+footer  {
+  padding: 15px;
+  position: relative;
+  background-color: black;
+}
+
+footer .grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+footer img {
+  max-width: 80px;
+}
+
+footer .social-media {
+  margin-left: 130px;
+  margin-bottom: 20px;
+  gap: 200px;
+}
+
+footer .social-media .social-media-links {
+  color: white;
+  font-size: 15px;
+  margin-right: 25px;
+  transition: .3s ease-in-out;
+}
+
+footer .social-media .social-media-links:hover {
+  font-size: 20px;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+footer .footer-links {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+footer .footer-links:hover {
+  opacity: .8;
+  text-decoration: underline;
+}
+
+footer .platforms {
+  width: 250px;
+}

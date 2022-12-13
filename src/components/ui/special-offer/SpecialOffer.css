@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
+
+.special-offer {
+    position: absolute;
+    width: 400px;
+    bottom: 50px;
+    left: calc(50% - 200px);
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.gap {
+    gap: 25px;
+}
+
+.special-offer .slogan {
+    font-weight: 500;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+}
+
+.special-offer .slogan span {
+    color: #04AA2F;
+    font-weight: 1000;
+}
+
+.special-offer img {
+    z-index: 100000;
+    max-height: 120px;
+}
+
+.special-offer .circle {
+    width: 200px;
+    height: 200px;
+    background-color: darkgreen;
+    border-radius: 50%;
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+}

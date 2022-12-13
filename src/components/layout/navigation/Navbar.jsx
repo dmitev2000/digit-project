@@ -34,7 +34,6 @@ const Navbar = () => {
     <nav className="px-5">
       <div className="d-flex justify-content-center align-items-center flex-column">
         <img src={logo} alt="starbucks logo" />
-        <p className="text-light fst-italic mb-0">text here...</p>
       </div>
       <ul>
         <li>

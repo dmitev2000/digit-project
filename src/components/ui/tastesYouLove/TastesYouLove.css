@@ -1,7 +1,7 @@
 .dish-category-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
 }
 
 .dish-category {
@@ -15,8 +15,19 @@
 }
 
 .dish-category-title {
-    border-bottom: 2px solid #04AA6D;
+    border-bottom: 4px solid #04AA6D;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.offer {
+    margin-bottom: 15px;
+    gap: 25px;
+    font-weight: bold;
+}
+
+.offer img {
+    width: 200px;
+    height: 200px;
 }
