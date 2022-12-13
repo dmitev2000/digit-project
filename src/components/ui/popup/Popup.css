@@ -1,0 +1,26 @@
+.popup {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: calc(50vh - 100px);
+    background-color: red;
+    left: calc(50% - 150px);
+    border-radius: 5px;
+    transition: 2s ease-in-out;
+}
+
+.popup .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}

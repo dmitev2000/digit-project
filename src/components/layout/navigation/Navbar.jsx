@@ -1,33 +1,44 @@
+import logo from '../../../assets/img/logo.png';
+import { Link } from "react-router-dom";
 import React from "react";
 import "./Navbar.css";
-import logo from "./logo.png";
 
 const Navbar = () => {
   window.onscroll = function () {
+    let links = document.querySelectorAll(".nav-link-v1");
     if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.body.scrollTop > 40 ||
+      document.documentElement.scrollTop > 40
     ) {
-      document.getElementById("locations-btn").style.display = "none";
-      document.querySelector('nav').style.backgroundColor = "white";
-      document.querySelector('nav').style.color = "black";
+      document.querySelector("nav").style.backgroundColor = "white";
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.color = "black";
+      }
     } else {
-      document.getElementById("locations-btn").style.display = "flex";
-      document.querySelector('nav').style.backgroundColor = "transparent";
-      document.querySelector('nav').style.color = "white";
-
+      document.querySelector("nav").style.backgroundColor = "transparent";
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.color = "white";
+      }
     }
   };
+
   return (
-    <nav>
-      <img src={logo} alt="dominos logo" />
+    <nav className="px-5">
+      <div className="d-flex justify-content-center align-items-center flex-column">
+        <img src={logo} alt="starbucks logo" />
+        <p className="text-light fst-italic mb-0">text here...</p>
+      </div>
       <ul>
-        <li>MK | EN</li>
-        <li>ДОМА</li>
+        <li className="nav-link-v1">MK | EN</li>
         <li>
-          <button>МЕНИ</button>
+          <Link to="/" className="nav-link-v1">ДОМА</Link>
         </li>
-        <li>НАРАЧАЈТЕ ВЕДНАШ!</li>
+        <li>
+          <Link to="/menu" className="nav-link-v1">МЕНИ</Link>
+        </li>
+        <li>
+          <Link to="/order-now" className="nav-link-v1 nav-link-order-now">НАРАЧАЈТЕ ВЕДНАШ!</Link>
+        </li>
       </ul>
     </nav>
   );

@@ -1,0 +1,29 @@
+.product-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 25px;
+    transition: 1s;
+}
+
+.product:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.product img {
+    max-height: 200px;
+}
+
+.product .product-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: capitalize;
+}

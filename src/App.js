@@ -1,16 +1,19 @@
 import './App.css';
 import Navbar from './components/layout/navigation/Navbar';
-import BestSellers from './components/ui/BestSellers';
-import Intro from './components/ui/Intro';
-import LocationsBtn from './components/ui/LocationsBtn';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './components/pages/HomePage';
+import MenuPage from './components/pages/MenuPage';
+import Popup from './components/ui/popup/Popup';
 
 function App() {
   return (
     <div className='app'>
       <Navbar />
-      <Intro />
-      <BestSellers />
-      <LocationsBtn />
+      <Popup />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/menu' element={<MenuPage />} />
+      </Routes>
     </div>
   );
 }
