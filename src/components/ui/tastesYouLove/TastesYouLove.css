@@ -1,0 +1,22 @@
+.dish-category-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.dish-category {
+    position: relative;
+}
+
+.tyl-title {
+    font-weight: bold;
+    text-transform: capitalize;
+    border-bottom: solid 5px #04AA6D;
+}
+
+.dish-category-title {
+    border-bottom: 2px solid #04AA6D;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}

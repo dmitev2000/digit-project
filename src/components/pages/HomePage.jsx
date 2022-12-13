@@ -1,12 +1,13 @@
 import React from 'react'
-import BestSellers from '../ui/BestSellers';
 import Intro from '../ui/Intro';
+import TastesYouLove from '../ui/tastesYouLove/TastesYouLove';
 
 const HomePage = () => {
   return (
     <div>
         <Intro />
-        <BestSellers />
+        {/* <BestSellers /> */}
+        <TastesYouLove />
     </div>
   )
 }
