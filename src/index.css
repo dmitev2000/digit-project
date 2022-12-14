@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 * {
   margin: 0;
@@ -7,17 +7,17 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-footer  {
+footer {
   padding: 15px;
   position: relative;
   background-color: black;
@@ -44,7 +44,7 @@ footer .social-media .social-media-links {
   color: white;
   font-size: 15px;
   margin-right: 25px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 footer .social-media .social-media-links:hover {
@@ -68,10 +68,14 @@ footer .footer-links {
 }
 
 footer .footer-links:hover {
-  opacity: .8;
+  opacity: 0.8;
   text-decoration: underline;
 }
 
 footer .platforms {
   width: 250px;
+}
+
+#map {
+  height: 180px;
 }

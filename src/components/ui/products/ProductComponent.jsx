@@ -1,7 +1,7 @@
 import React from "react";
-import './Product.css';
+import './ProductComponent.css';
 
-const Product = ({ details }) => {
+const ProductComponent = ({ details }) => {
   return (
     <div className="product">
       <img src={details.img} alt={details.title} />
@@ -10,4 +10,4 @@ const Product = ({ details }) => {
   );
 };
 
-export default Product;
+export default ProductComponent;

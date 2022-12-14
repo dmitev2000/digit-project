@@ -11,16 +11,16 @@ const Footer = () => {
         <img src={logo} alt="" />
         <div className="d-flex justify-content-center align-items-center">
           <a className="social-media-links" href="#!">
-            <i class="bi bi-facebook"></i>
+            <i className="bi bi-facebook"></i>
           </a>
           <a className="social-media-links" href="#!">
-            <i class="bi bi-instagram"></i>
+            <i className="bi bi-instagram"></i>
           </a>
           <a className="social-media-links" href="#!">
-            <i class="bi bi-twitter"></i>
+            <i className="bi bi-twitter"></i>
           </a>
           <a className="social-media-links" href="#!">
-            <i class="bi bi-github"></i>
+            <i className="bi bi-github"></i>
           </a>
         </div>
       </div>

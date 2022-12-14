@@ -1,0 +1,16 @@
+.menu-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.menu-item {
+    max-width: 210px;
+}
+
+.menu-item img {
+    max-width: 200px;
+    border-radius: 50%;
+}

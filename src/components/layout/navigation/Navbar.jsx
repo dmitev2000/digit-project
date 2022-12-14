@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   window.onscroll = function () {
     let links = document.querySelectorAll(".nav-link-v1");
     let dropbtns = document.querySelectorAll(".dropbtn");
@@ -31,7 +34,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="px-5">
+    <nav
+      className={`px-5 ${
+        location.pathname === "/" ? "bg-transparent" : "bg-green"
+      }`}
+    >
       <div className="d-flex justify-content-center align-items-center flex-column">
         <img src={logo} alt="starbucks logo" />
       </div>
@@ -43,14 +50,23 @@ const Navbar = () => {
         </li>
         <li>
           <Dropdown
+            path="/menu"
             name="menu"
-            elements={["Drinks", "Food", "At home coffee", "Merchandise"]}
+            elements={[
+              ["Drinks", "/drinks"],
+              ["Food", "/food"],
+              ["Merchandise", "/merchandise"],
+            ]}
           />
         </li>
         <li>
           <Dropdown
             name="gift cards"
-            elements={["Happy birthday", "Thank you", "Traditional"]}
+            elements={[
+              ["Happy birthday", "/hbd-cards"],
+              ["Thank you", "/ty-cards"],
+              ["Traditional", "/traditional-cards"],
+            ]}
           />
         </li>
         <li>

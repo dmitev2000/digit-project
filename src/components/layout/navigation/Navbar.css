@@ -4,7 +4,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     min-height: 100px;
-    background-color: transparent;
     padding: 5px 20px;
     position: fixed;
     width: 100%;
@@ -13,6 +12,15 @@ nav {
     z-index: 100;
     transition: 1.4s ease-in-out;
     color: white;
+    z-index: 100;
+}
+
+nav.bg-transparent {
+    background-color: transparent;
+}
+
+nav.bg-green {
+    background-color: #04AA6D;
 }
 
 nav ul {
