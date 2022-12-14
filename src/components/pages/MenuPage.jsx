@@ -14,13 +14,37 @@ const ManuPage = () => {
     });
   }, []);
 
-  if(loading) {
-    return <h1>Loading, please wait...</h1>
+  if (loading) {
+    return <h1>Loading, please wait...</h1>;
   }
 
   return (
-    <div className="container">
-      <MenuItemList data={products} />
+    <div className="container py-5 my-5">
+      <h3 className="fw-bold">Drinks:</h3>
+      <hr />
+      <h5>Hot drinks</h5>
+      <hr />
+      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT DRINKS")} />
+      <br />
+      <hr />
+      <h5>Hot teas</h5>
+      <hr />
+      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT TEAS")} />
+      <br />
+      <hr />
+      <h5>Hot coffees</h5>
+      <hr />
+      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT COFFEES")} />
+      <br />
+      <hr />
+      <h5>Cold drinks</h5>
+      <hr />
+      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "COLD DRINKS")} />
+      <br />
+      <hr />
+      <h5>Frappuccino</h5>
+      <hr />
+      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase().includes("FRAPPUCCINO"))} />
     </div>
   );
 };

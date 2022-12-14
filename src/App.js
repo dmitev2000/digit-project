@@ -5,6 +5,7 @@ import HomePage from "./components/pages/HomePage";
 import MenuPage from "./components/pages/MenuPage";
 import Footer from "./components/layout/footer/Footer";
 import LocationModal from "./components/ui/popup/LocationModal";
+import ProductDetails from "./components/ui/products/ProductDetails";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
         <LocationModal />
         <Footer />
