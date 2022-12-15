@@ -1,0 +1,15 @@
+.product-info {
+    background-color: #1f3933;
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 25px;
+}
+
+.product-info img {
+    max-width: 300px;
+}
+
+.product-sizes {
+    padding: 25px;
+    gap: 25px;
+}

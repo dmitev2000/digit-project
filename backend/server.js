@@ -4,6 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import productRouter from './routes/productRoutes.js';
+import authRouter from './routes/authRoutes.js';
+import userRouter from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -22,6 +24,17 @@ connection.once('open', () => {
 })
 
 app.use('/products', productRouter);
+app.use('/auth', authRouter);
+app.use('/users', userRouter);
+
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  let errorMessage;
+  if (err.message.toString().includes('is shorter than the minimum allowed length')) {
+    errorMessage = "Username must be at least 5 characters long.";
+  } else errorMessage = err.message || "Something went wrong.";   
+  return res.status(errorStatus).json(errorMessage);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

@@ -1,12 +1,24 @@
 import logo from "../../../assets/img/logo.png";
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 import { useLocation } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const context = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
+
+  console.log(context);
+  
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+    localStorage.removeItem('user');
+    navigate("/");
+  };
 
   window.onscroll = function () {
     let links = document.querySelectorAll(".nav-link-v1");
@@ -74,6 +86,29 @@ const Navbar = () => {
             ORDER NOW!
           </Link>
         </li>
+        {!user ? (
+          <>
+            <li>
+              <Link to="/login" className="nav-link-v1">
+                LOGIN
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" className="nav-link-v1">
+                REGISTER
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <span>Welcome, {user.username}</span>
+            </li>
+            <li>
+              <button className="btn btn-danger" onClick={handleLogout}>Log out</button>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

@@ -79,3 +79,22 @@ footer .platforms {
 #map {
   height: 180px;
 }
+
+.loader-wrapper {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-back {
+  position: fixed;
+  top: 0;
+  min-height: 100px;
+  background-color: #04AA6D;
+  width: 100%;
+}
+
+.mp {
+  margin-top: 150px;
+}

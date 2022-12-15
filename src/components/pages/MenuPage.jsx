@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MenuItemList from "../ui/menu/MenuItemList";
+import Loader from "../ui/loader/Loader";
 
 const ManuPage = () => {
   const [products, setProducts] = useState([]);
@@ -15,37 +16,75 @@ const ManuPage = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading, please wait...</h1>;
+    return (
+      <div className="loader-wrapper">
+        <Loader />
+      </div>
+    );
   }
 
   return (
-    <div className="container py-5 my-5">
-      <h3 className="fw-bold">Drinks:</h3>
-      <hr />
-      <h5>Hot drinks</h5>
-      <hr />
-      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT DRINKS")} />
-      <br />
-      <hr />
-      <h5>Hot teas</h5>
-      <hr />
-      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT TEAS")} />
-      <br />
-      <hr />
-      <h5>Hot coffees</h5>
-      <hr />
-      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "HOT COFFEES")} />
-      <br />
-      <hr />
-      <h5>Cold drinks</h5>
-      <hr />
-      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase() === "COLD DRINKS")} />
-      <br />
-      <hr />
-      <h5>Frappuccino</h5>
-      <hr />
-      <MenuItemList data={products.filter((element) => element.product_type.toUpperCase().includes("FRAPPUCCINO"))} />
-    </div>
+    <div>
+      <div className="nav-back"></div>
+      <div className="container mp">
+        <h3 className="fw-bold">Drinks:</h3>
+        <hr />
+        <h5>Hot drinks</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type.toUpperCase() === "HOT DRINKS"
+          )}
+        />
+        <br />
+        <hr />
+        <h5>Hot teas</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type.toUpperCase() === "HOT TEAS"
+          )}
+        />
+        <br />
+        <hr />
+        <h5>Hot coffees</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type.toUpperCase() === "HOT COFFEES"
+          )}
+        />
+        <br />
+        <hr />
+        <h5>Cold drinks</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type.toUpperCase() === "COLD DRINKS"
+          )}
+        />
+        <br />
+        <hr />
+        <h5>Frappuccino</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter((element) =>
+            element.product_type.toUpperCase().includes("FRAPPUCCINO")
+          )}
+        />
+        <h3 className="fw-bold">Merchandise:</h3>
+        <hr />
+        <h5>Cold cups</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type.toUpperCase() === "COLD CUPS"
+          )}
+        />
+        <br />
+        <hr />
+      </div>
+    </div>  
   );
 };
 
