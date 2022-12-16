@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import productRouter from './routes/productRoutes.js';
 import authRouter from './routes/authRoutes.js';
 import userRouter from './routes/userRoutes.js';
+import cardRouter from './routes/cardRoutes.js';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ connection.once('open', () => {
 app.use('/products', productRouter);
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
+app.use('/cards', cardRouter);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;

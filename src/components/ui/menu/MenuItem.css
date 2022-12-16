@@ -9,12 +9,17 @@
 .menu-item {
     max-width: 240px;
     padding: 15px;
+    transition: 0.2s ease-in-out;
 }
 
 .menu-item:hover {
-    background-color: gray;
     cursor: pointer;
     border-radius: 15px;
+    transform: translateY(-20px);
+}
+
+.menu-item:hover img {
+    border: solid 5px #04AA6D;
 }
 
 .menu-item img {

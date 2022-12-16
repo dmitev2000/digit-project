@@ -5,26 +5,30 @@ import HomePage from "./components/pages/HomePage";
 import MenuPage from "./components/pages/MenuPage";
 import Footer from "./components/layout/footer/Footer";
 import LocationModal from "./components/ui/popup/LocationModal";
-import ProductCustomization from './components/ui/products/ProductCustomization';
+import ProductCustomization from "./components/ui/products/ProductCustomization";
 import Register from "./components/ui/auth/Register";
 import Login from "./components/ui/auth/Login";
-import OurCompany from './components/pages/OurCompany';
-import OurCoffee from './components/pages/OurCoffee';
-import OurService from './components/pages/OurService';
-import Planet from './components/pages/Planet';
-import Suppliers from './components/pages/Suppliers';
-import GiftCards from './components/pages/GiftCards';
-import OfficeFoods from './components/pages/OfficeFoods';
-import People from './components/pages/People';
+import OurCompany from "./components/pages/OurCompany";
+import OurCoffee from "./components/pages/OurCoffee";
+import OurService from "./components/pages/OurService";
+import Planet from "./components/pages/Planet";
+import Suppliers from "./components/pages/Suppliers";
+import GiftCards from "./components/pages/GiftCards";
+import OfficeFoods from "./components/pages/OfficeFoods";
+import People from "./components/pages/People";
+import CardsPage from "./components/pages/CardsPage";
+import ScrollToTop from "./components/ui/scrollTop/ScrollTopComponent";
 
 function App() {
-
   return (
     <div className="app">
-        <Navbar />
+      <Navbar />
+
+      <ScrollToTop>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />
+          <Route path="/gift-cards" element={<CardsPage />} />
           <Route path="/our-company" element={<OurCompany />} />
           <Route path="/our-coffee" element={<OurCoffee />} />
           <Route path="/our-service" element={<OurService />} />
@@ -34,12 +38,16 @@ function App() {
           <Route path="/office" element={<OfficeFoods />} />
           <Route path="/people" element={<People />} />
           <Route path="/our-company" element={<OurCompany />} />
-          <Route path="/product/customization/:id" element={<ProductCustomization />} />
+          <Route
+            path="/product/customization/:id"
+            element={<ProductCustomization />}
+          />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        <LocationModal />
-        <Footer />
+      </ScrollToTop>
+      <LocationModal />
+      <Footer />
     </div>
   );
 }

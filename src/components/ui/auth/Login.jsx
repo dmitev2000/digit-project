@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState, useContext } from "react";
-import { useNavigate, Link, json } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Auth.css";
 import { AuthContext } from "../../../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { error, dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
@@ -35,42 +35,45 @@ const Login = () => {
   };
 
   return (
-    <div className="container pb-5 auth">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="username"
-            required
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            required
-            minLength={8}
-            onChange={handleChange}
-          />
-        </div>
-        <span>Don't have an account? </span>
-        <Link to="/register">Sign up</Link>
-        <br /> <br />
-        <button type="submit" className="btn btn-success">
-          Submit
-        </button>
-      </form>
-    </div>
+    <>
+      <div className="nav-back"></div>
+      <div className="container pb-5 auth">
+        <h1>Login</h1>
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">
+              Username
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="username"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              required
+              minLength={8}
+              onChange={handleChange}
+            />
+          </div>
+          <span>Don't have an account? </span>
+          <Link to="/register">Sign up</Link>
+          <br /> <br />
+          <button type="submit" className="btn btn-success">
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

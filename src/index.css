@@ -87,14 +87,60 @@ footer .platforms {
   align-items: center;
 }
 
+.coffee-machine {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  border-radius: 25px;
+}
+
 .nav-back {
   position: fixed;
   top: 0;
   min-height: 100px;
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   width: 100%;
+}
+
+.cpage {
+  margin-top: 100px;
+}
+
+.cpage h3 {
+  border-bottom: 2px solid #04aa6d;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-style: italic;
+  padding-bottom: 5px;
 }
 
 .mp {
   margin-top: 150px;
+}
+
+.welcome {
+  color: #04aa6d;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border: 1px solid #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #04aa6d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: solid 2px #fff;
 }

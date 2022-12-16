@@ -5,7 +5,6 @@
     position: absolute;
     top: calc(100vh - 120px);
     right: 20px;
-    /* animation: fadeIn 3s; */
     box-shadow: 0 0 25px #04AA6D;
     border-radius: 15px;
     padding: 10px 20px 10px 10px;
@@ -14,21 +13,7 @@
     font-weight: bold;
 }
 
-.locations-btn span {
-    color: white;
+.near-text {
+    font-weight: bold;
+    font-size: 18px;
 }
-
-/* @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@-moz-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-} */

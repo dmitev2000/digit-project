@@ -26,11 +26,11 @@ const LocationsBtn = () => {
     >
       <lord-icon
         src="https://cdn.lordicon.com/oaflahpk.json"
-        trigger="hover"
+        trigger="loop-on-hover"
         colors="primary:red"
         style={{ width: "50px", height: "50px" }}
       ></lord-icon>
-      <span>Nearest store</span>
+      <span className="near-text" style={{color: "#04AA6D"}}>Nearest store</span>
 
     </div>
   );

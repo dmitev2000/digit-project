@@ -2,7 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 const LocationModal = () => {
-  const coords = [41.9981, 21.4254];
+  const coords = [41.9981, 21.4259];
 
   return (
     <div

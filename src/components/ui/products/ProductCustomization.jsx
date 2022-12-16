@@ -27,6 +27,7 @@ const ProductCustomization = () => {
   }
 
   return <div className="product-customization-wrapper">
+    <div className="nav-back"></div>
     <ShowCustomization product={product} />
   </div>;
 };
