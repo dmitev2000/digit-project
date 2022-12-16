@@ -1,4 +1,5 @@
 .product-info {
+    position: relative;
     background-color: #1f3933;
     width: 100%;
     margin-top: 150px;
@@ -12,4 +13,28 @@
 .product-sizes {
     padding: 25px;
     gap: 25px;
+}
+
+.customization-title {
+    border-bottom: solid 4px #1f3933;
+}
+
+.part {
+    min-width: 500px;
+}
+
+.order-now-btn {
+    padding: 15px;
+    background-color: #04aa6d;
+    font-weight: bold;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    position: absolute;
+    bottom: 45px;
+    right: 45px;
+}
+
+.order-now-btn:hover {
+    box-shadow: 0 0 45px #04aa6d;
 }

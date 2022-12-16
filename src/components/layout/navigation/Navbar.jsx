@@ -4,11 +4,13 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 import { AuthContext } from "../../../context/AuthContext";
+import CartContext from "../../../context/CartContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const cartCtx = useContext(CartContext);
   const { user, dispatch } = useContext(AuthContext);
-
+  
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
     localStorage.removeItem("user");
@@ -46,7 +48,7 @@ const Navbar = () => {
   return (
     <nav className="px-5">
       <div className="d-flex justify-content-center align-items-center">
-        <Link to='/'>
+        <Link to="/">
           <img src={logo} className="starbucks-logo" alt="starbucks logo" />
         </Link>
       </div>
@@ -80,8 +82,10 @@ const Navbar = () => {
           />
         </li>
         <li>
-          <Link to="/order-now" className="nav-link-v1">
-            ORDER NOW!
+          <Link className="nav-link-v1" to="/cart">
+            CART(
+              {cartCtx.allItems}
+            )
           </Link>
         </li>
         {!user ? (

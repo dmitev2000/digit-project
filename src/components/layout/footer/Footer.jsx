@@ -80,13 +80,21 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
+        {/* <li>
+          <h2 className="text-light fw-bold">Get the app</h2>
+        </li> */}
+        {/* <li>
+          <img className="platforms m-0" src={appstore} alt="app store" />
+          <img className="platforms m-0" src={playstore} alt="play store" />
+        </li> */}
         <ul>
           <li>
-            <h2 className="text-light fw-bold">Get the app</h2>
-          </li>
-          <li>
-            <img className="platforms m-0" src={appstore} alt="app store" />
-            <img className="platforms m-0" src={playstore} alt="play store" />
+            <h3 style={{ color: "White" }}>Contact us</h3>
+            <h5 style={{ color: "White" }}>Phone: +389 70 346 494</h5>
+            <h5 style={{ color: "White" }}>Mail: starbucks@digit.com</h5>
+            <h5 style={{ color: "White" }}>
+              Address: Volgogradska 2, Skopje City Mall
+            </h5>
           </li>
         </ul>
       </div>

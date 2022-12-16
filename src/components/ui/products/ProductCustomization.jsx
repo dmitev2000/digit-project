@@ -11,7 +11,6 @@ const ProductCustomization = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    console.log(id);
     axios.get(`http://localhost:5000/products/${id}`).then((res) => {
       setProduct(res.data);
       setLoading(false);
