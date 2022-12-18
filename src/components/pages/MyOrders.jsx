@@ -35,7 +35,7 @@ const MyOrders = () => {
   return (
     <>
       <div className="nav-back"></div>
-      <div className="container mt-5 py-5">
+      <div className="container mt-5 py-5 minh">
         <h1 className="my-5 cart-title fw-bold">My Orders</h1>
         {orders.length === 0 ? (
           <h3 className="text-muted my-5">You dont have any orders yet.</h3>
