@@ -1,0 +1,16 @@
+.order {
+    padding: 10px;
+    background-color: #04aa6d;
+    font-weight: bold;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    display: block;
+    margin: 5px auto;
+    text-decoration: none;
+    width: 150px;
+}
+
+.order:hover {
+    box-shadow: 0 0 45px #04aa6d;
+}

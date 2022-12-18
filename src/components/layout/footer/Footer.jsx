@@ -1,33 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/img/logo.png";
-import appstore from "../../../assets/img/appstore.png";
-import playstore from "../../../assets/img/playstore.png";
 
 const Footer = () => {
   return (
     <footer>
-      <div className="social-media d-flex">
-        <img src={logo} alt="" />
-        <div className="d-flex justify-content-center align-items-center">
-          <a className="social-media-links" href="#!">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a className="social-media-links" href="#!">
-            <i className="bi bi-instagram"></i>
-          </a>
-          <a className="social-media-links" href="#!">
-            <i className="bi bi-twitter"></i>
-          </a>
-          <a className="social-media-links" href="#!">
-            <i className="bi bi-github"></i>
-          </a>
-        </div>
-      </div>
       <div className="grid">
         <ul>
           <li>
-            <h2 className="text-light fw-bold">About us</h2>
+            <h3 className="text-light fw-bold">About us</h3>
           </li>
           <li>
             <Link to="/our-company" className="footer-links">
@@ -47,7 +27,7 @@ const Footer = () => {
         </ul>
         <ul>
           <li>
-            <h2 className="text-light fw-bold">Social impact</h2>
+            <h3 className="text-light fw-bold">Social impact</h3>
           </li>
           <li>
             <Link to="/people" className="footer-links">
@@ -62,7 +42,7 @@ const Footer = () => {
         </ul>
         <ul>
           <li>
-            <h2 className="text-light fw-bold">Business partners</h2>
+            <h3 className="text-light fw-bold">Business partners</h3>
           </li>
           <li>
             <Link to="/suppliers" className="footer-links">
@@ -80,21 +60,34 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        {/* <li>
-          <h2 className="text-light fw-bold">Get the app</h2>
-        </li> */}
-        {/* <li>
-          <img className="platforms m-0" src={appstore} alt="app store" />
-          <img className="platforms m-0" src={playstore} alt="play store" />
-        </li> */}
         <ul>
           <li>
-            <h3 style={{ color: "White" }}>Contact us</h3>
-            <h5 style={{ color: "White" }}>Phone: +389 70 346 494</h5>
-            <h5 style={{ color: "White" }}>Mail: starbucks@digit.com</h5>
-            <h5 style={{ color: "White" }}>
+            <h3 className="text-light fw-bold">Contact us</h3>
+          </li>
+          <li>
+            <p className="footer-links">Phone: +389 70 346 494</p>
+          </li>
+          <li>
+            <p className="footer-links">Mail: starbucks@digit.com</p>
+          </li>
+          <li>
+            <p className="footer-links">
               Address: Volgogradska 2, Skopje City Mall
-            </h5>
+            </p>
+          </li>
+          <li>
+            <a className="social-media-links" href="#!">
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a className="social-media-links" href="#!">
+              <i className="bi bi-instagram"></i>
+            </a>
+            <a className="social-media-links" href="#!">
+              <i className="bi bi-twitter"></i>
+            </a>
+            <a className="social-media-links" href="#!">
+              <i className="bi bi-github"></i>
+            </a>
           </li>
         </ul>
       </div>

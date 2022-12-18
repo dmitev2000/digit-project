@@ -4,7 +4,7 @@ import axios from "axios";
 import Loader from "../ui/loader/Loader";
 const Drinks = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get("http://localhost:5000/products").then((res) => {
@@ -24,7 +24,7 @@ const Drinks = () => {
     <>
       <div className="nav-back"></div>
       <div className="my-5 py-5 container">
-        <h1 className="mt-5 fw-bold">Drinks</h1>
+        <h1 className="cart-title my-5 fw-bold">Drinks</h1>
         <hr />
         <h3>Hot Teas</h3>
         <hr />

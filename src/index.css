@@ -34,21 +34,14 @@ footer img {
   max-width: 80px;
 }
 
-footer .social-media {
-  margin-left: 130px;
-  margin-bottom: 20px;
-  gap: 200px;
-}
-
-footer .social-media .social-media-links {
+footer .social-media-links {
   color: white;
   font-size: 15px;
   margin-right: 25px;
-  transition: 0.3s ease-in-out;
 }
 
-footer .social-media .social-media-links:hover {
-  font-size: 20px;
+footer .social-media-links:hover {
+  color: #04aa6d;
 }
 
 footer ul {
@@ -119,13 +112,27 @@ footer .platforms {
   margin-top: 150px;
 }
 
+.cart-title {
+  border-bottom: solid 5px #04aa6d;
+  padding-bottom: 2px;
+}
+
 .welcome {
-  color: #04aa6d;
   text-transform: uppercase;
-  background-color: white;
-  padding: 8px;
+}
+
+.order-success {
+  color: #04aa6d;
   font-weight: bold;
-  border-radius: 5px;
+  text-align: center;
+}
+
+.order-error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px auto;
+  max-width: 450px;
 }
 
 ::-webkit-scrollbar {

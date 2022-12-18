@@ -15,6 +15,7 @@ const ProductCustomization = () => {
       setProduct(res.data);
       setLoading(false);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {

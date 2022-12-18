@@ -50,6 +50,7 @@ const Login = () => {
               id="username"
               required
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="mb-3">

@@ -47,7 +47,12 @@ export const register = async (req, res, next) => {
   
       const { password, ...otherProps } = user._doc;
       res
-        .cookie("access_token", token, { httpOnly: true })
+        .cookie("access_token", token, {
+          httpOnly: true,
+          maxAge: 3600,
+          sameSite: "lax",
+          path: "/",
+        })
         .status(200)
         .json({ ...otherProps });
     } catch (err) {

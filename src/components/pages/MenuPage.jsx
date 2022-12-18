@@ -26,6 +26,7 @@ const ManuPage = () => {
     <div>
       <div className="nav-back"></div>
       <div className="container mp">
+        <h1 className="mb-5 cart-title fw-bold">Our menu</h1>
         <h3 className="fw-bold">Drinks:</h3>
         <hr />
         <h5>Hot drinks</h5>
@@ -82,8 +83,23 @@ const ManuPage = () => {
         />
         <br />
         <hr />
+        <h3 className="fw-bold">Food</h3>
+        <hr />
+        <h5>Hot Breakfast</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter(
+            (element) => element.product_type === "Hot Breakfast"
+          )}
+        />
+        <hr />
+        <h5>Lunch</h5>
+        <hr />
+        <MenuItemList
+          data={products.filter((element) => element.product_type === "Lunch")}
+        />
       </div>
-    </div>  
+    </div>
   );
 };
 

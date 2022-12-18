@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
   const { user, dispatch } = useContext(AuthContext);
-  
+
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
     localStorage.removeItem("user");
@@ -70,24 +70,18 @@ const Navbar = () => {
           />
         </li>
         <li>
-          <Dropdown
-            path="/gift-cards"
-            name="gift cards"
-            elements={[
-              ["Happy birthday", "/hbd-cards"],
-              ["Thank you", "/ty-cards"],
-              ["Christmas", "/xmas-cards"],
-              ["Traditional", "/traditional-cards"],
-            ]}
-          />
+          <Link className="nav-link-v1" to="/gift-cards">GIFT CARDS</Link>
         </li>
         <li>
           <Link className="nav-link-v1" to="/cart">
-            CART(
-              {cartCtx.allItems}
-            )
+            CART ({cartCtx.allItems})
           </Link>
         </li>
+        {user && <li>
+          <Link className="nav-link-v1" to="/my-orders">
+            MY ORDERS
+          </Link>
+        </li>}
         {!user ? (
           <>
             <li>
@@ -104,11 +98,10 @@ const Navbar = () => {
         ) : (
           <>
             <li>
-              <span className="welcome">Welcome, {user.username}</span>
+              <span className="nav-link-v1 welcome">Welcome, {user.username}</span>
             </li>
             <li>
               <button className="btn btn-danger" onClick={handleLogout}>
-                Log out
                 <i className="mx-1 bi bi-box-arrow-right"></i>
               </button>
             </li>

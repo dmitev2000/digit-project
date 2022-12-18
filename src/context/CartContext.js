@@ -9,6 +9,7 @@ const CartContext = createContext({
   addItemToCart: (item) => {},
   removeItemFromCart: (itemId) => {},
   isItemInCart: (itemId) => {},
+  emptyCart: () => {},
 });
 
 export function CartContextProvider(props) {
@@ -16,7 +17,7 @@ export function CartContextProvider(props) {
   const [allItems, setAllItems] = useState(0);
 
   function addItemToCartHandler(item, amount) {
-    setAllItems(items => items + 1);
+    setAllItems((items) => items + 1);
     if (isItemInCartHandler(item.id)) {
       let product = cartItems.find((i) => i.id === item.id);
       product.amount += amount;
@@ -36,7 +37,9 @@ export function CartContextProvider(props) {
   }
 
   function removeItemFromCartHandler(itemId) {
-    setAllItems(val => val - cartItems.find((item) => item.id === itemId).amount);
+    setAllItems(
+      (val) => val - cartItems.find((item) => item.id === itemId).amount
+    );
     setCartItems((prev) => {
       return prev.filter((item) => item.id !== itemId);
     });
@@ -58,6 +61,11 @@ export function CartContextProvider(props) {
     return cartItems.some((item) => item.id === itemId);
   }
 
+  function emptyCartHandler() {
+    setCartItems(() => []);
+    setAllItems(() => 0);
+  }
+
   const context = {
     cartItems: cartItems,
     totalItems: cartItems.length,
@@ -65,6 +73,7 @@ export function CartContextProvider(props) {
     addItemToCart: addItemToCartHandler,
     removeItemFromCart: removeItemFromCartHandler,
     isItemInCart: isItemInCartHandler,
+    emptyCart: emptyCartHandler,
     totalQuantity: totalQuantity,
     allItems: allItems,
   };

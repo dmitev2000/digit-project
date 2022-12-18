@@ -1,0 +1,15 @@
+.order-comp {
+    background-color: #04aa6d;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 25px;
+}
+
+.order-comp:hover {
+    box-shadow: 0 0 35px #04aa6d;
+    color: white;
+}

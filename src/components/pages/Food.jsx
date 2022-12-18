@@ -26,7 +26,7 @@ const Food = () => {
     <>
       <div className="nav-back"></div>
       <div className="my-5 py-5 container">
-        <h1 className="mt-5 fw-bold">Food</h1>
+        <h1 className="cart-title my-5 fw-bold">Food</h1>
         <hr />
         <h3>Hot Breakfast</h3>
         <hr />
