@@ -11,9 +11,36 @@
     opacity: .8;
     cursor: pointer;
     font-weight: bold;
+    background-color: black;
 }
 
 .near-text {
     font-weight: bold;
     font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+    .locations-btn {
+        padding: 10px;
+        min-width: 100px;
+    }
+    .locations-btn > * {
+        margin: 0;
+        padding: 0;
+    }
+    .near-text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .coffee-machine {
+        display: none;
+    }
+    .locations-btn {
+        min-width: auto;
+        top: auto;
+        bottom: 225px;
+        background-color: black;
+    }
 }

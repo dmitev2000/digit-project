@@ -25,7 +25,7 @@ const Register = () => {
     <>
       <div className="nav-back"></div>
       <div className="container pb-5 auth">
-        <h1 className="text-dark">Register</h1>
+        <h1 className="cart-title my-5">Sign up</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">
@@ -58,7 +58,7 @@ const Register = () => {
             />
           </div>
           <button type="submit" className="btn btn-success">
-            Submit
+            Sign up
           </button>
         </form>
       </div>

@@ -27,6 +27,7 @@ footer .grid {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  flex-wrap: wrap;
   padding: 15px;
 }
 
@@ -85,7 +86,7 @@ footer .platforms {
   bottom: 20px;
   left: 20px;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .nav-back {
@@ -104,7 +105,6 @@ footer .platforms {
   border-bottom: 2px solid #04aa6d;
   margin-bottom: 20px;
   font-weight: bold;
-  font-style: italic;
   padding-bottom: 5px;
 }
 
@@ -150,4 +150,27 @@ footer .platforms {
 
 ::-webkit-scrollbar-thumb:hover {
   border: solid 2px #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  footer .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    text-align: center;
+  }  
+}
+
+@media screen and (max-width: 600px) {
+  footer .grid {
+    grid-template-columns: 1fr;
+  }
+  footer .grid ul {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: solid 2px white;
+  }
+  .cart-title {
+    text-align: center;
+  }
 }

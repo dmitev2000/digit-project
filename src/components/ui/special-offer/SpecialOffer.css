@@ -40,3 +40,12 @@
     right: -80px;
     bottom: -80px;
 }
+
+@media screen and (max-width: 500px) {
+    .special-offer {
+        max-width: 90%;
+    }
+    .special-offer .slogan {
+        font-size: 18px;
+    }
+}

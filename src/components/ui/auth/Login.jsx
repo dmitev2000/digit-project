@@ -38,7 +38,7 @@ const Login = () => {
     <>
       <div className="nav-back"></div>
       <div className="container pb-5 auth">
-        <h1>Login</h1>
+        <h1 className="my-5 cart-title">Sign in</h1>
         <form onSubmit={handleLogin}>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">
@@ -66,11 +66,11 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <span>Don't have an account? </span>
+          <span className="fw-bold text-muted">Don't have an account? </span>
           <Link to="/register">Sign up</Link>
           <br /> <br />
           <button type="submit" className="btn btn-success">
-            Submit
+            Sign in
           </button>
         </form>
       </div>

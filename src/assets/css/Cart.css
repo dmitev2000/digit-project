@@ -14,3 +14,7 @@
 .order:hover {
     box-shadow: 0 0 45px #04aa6d;
 }
+
+.minh {
+    min-height: 450px;
+}

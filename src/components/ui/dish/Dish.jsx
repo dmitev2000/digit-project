@@ -2,7 +2,7 @@ import React from "react";
 
 const Dish = ({ img, text }) => {
   return (
-    <div className="offer d-flex justify-content-center align-items-center">
+    <div className="offer">
       <img
         src={img}
         alt={text}
