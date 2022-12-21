@@ -95,6 +95,25 @@ const Cart = () => {
                             className="btn btn-danger"
                             onClick={() => {
                               cartCtx.removeItemFromCart(element.id);
+                              Store.addNotification({
+                                title: "Warning!",
+                                message: "Item removed from cart!",
+                                type: "warning",
+                                insert: "top",
+                                container: "top-left",
+                                animationIn: [
+                                  "animate__animated",
+                                  "animate__fadeIn",
+                                ],
+                                animationOut: [
+                                  "animate__animated",
+                                  "animate__fadeOut",
+                                ],
+                                dismiss: {
+                                  duration: 5000,
+                                  onScreen: true,
+                                },
+                              });
                             }}
                           >
                             Remove item
@@ -108,6 +127,40 @@ const Cart = () => {
                   <tr className="text-end">
                     <th colSpan={6}>
                       Total: <b>${cartCtx.totalPrice()}</b>
+                    </th>
+                  </tr>
+
+                  <tr className="text-end">
+                    <th colSpan={6}>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          if (window.confirm("Are you sure?") === true) {
+                            Store.addNotification({
+                              title: "Warning!",
+                              message: "Your cart is now empty!",
+                              type: "danger",
+                              insert: "top",
+                              container: "top-left",
+                              animationIn: [
+                                "animate__animated",
+                                "animate__fadeIn",
+                              ],
+                              animationOut: [
+                                "animate__animated",
+                                "animate__fadeOut",
+                              ],
+                              dismiss: {
+                                duration: 4500,
+                                onScreen: true,
+                              },
+                            });
+                            cartCtx.emptyCart();
+                          }
+                        }}
+                      >
+                        Empty cart
+                      </button>
                     </th>
                   </tr>
                 </tfoot>
