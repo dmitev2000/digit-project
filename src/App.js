@@ -25,6 +25,7 @@ import { CartContextProvider } from "./context/CartContext";
 import Cart from "./components/pages/Cart";
 import MyOrders from './components/pages/MyOrders';
 import OrderDetails from './components/pages/OrderDetails';
+import TopProducts from "./components/pages/TopProducts";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/my-orders" element={<MyOrders />} />
             <Route path="/my-orders/order-details/:id" element={<OrderDetails />} />
+            <Route path="/top-products" element={<TopProducts />}/>
           </Routes>
         </ScrollToTop>
       </CartContextProvider>

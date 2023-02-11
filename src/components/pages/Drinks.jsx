@@ -57,8 +57,8 @@ const Drinks = () => {
         <h3>Frappuccino</h3>
         <hr />
         <MenuItemList
-          data={data.filter(
-            (element) => element.product_type === "Frappuccino"
+          data={data.filter((element) =>
+            element.product_type.toString().includes("Frappuccino")
           )}
         />
       </div>

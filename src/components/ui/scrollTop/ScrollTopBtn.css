@@ -1,7 +1,15 @@
 .scroll-top-btn {
-    position: absolute;
-    bottom: 25px;
+    position: fixed;
+    top: calc(100vh - 75px);
     left: 25px;
     color: #04AA6D;
     background-color: black;
+    z-index: 1000;
+    border-radius: 50%;
+    padding: 5px;
+    opacity: 0;
+    font-size: 30px;
+    transition: 0.7s linear;
+    width: 55px;
+    height: 55px;
 }

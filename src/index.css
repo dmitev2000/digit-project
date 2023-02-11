@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 150px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -135,6 +140,42 @@ footer .platforms {
   max-width: 450px;
 }
 
+.shortcuts > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 180px;
+  flex-wrap: wrap;
+  position: relative;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 15% 50%, 0% 0%);
+  background-color: #1f3933;
+  color: white;
+  margin: 10px -5px;
+  text-decoration: none;
+  padding: 10px 35px;
+  position: relative;
+}
+
+.shortcuts > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.scroll-top {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+  background-color: #04aa6d;
+  border-radius: 50%;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   border: 1px solid #fff;
@@ -152,13 +193,39 @@ footer .platforms {
   border: solid 2px #fff;
 }
 
+.top-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  margin-bottom: 25px;
+}
+
+.gold, .silver, .bronze {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gold {
+  border-bottom: solid 60px gold;
+}
+
+.silver {
+  border-bottom: solid 40px silver;
+}
+
+.bronze {
+  border-bottom: solid 20px #cd7f32;
+}
+
 @media screen and (max-width: 1200px) {
   footer .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     text-align: center;
-  }  
+  }
 }
 
 @media screen and (max-width: 600px) {

@@ -24,12 +24,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
+mongoose.set('strictQuery', false);
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MongoDB database connection established successfully");
-});
-
 app.use("/products", productRouter);
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
@@ -49,6 +46,9 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).json(errorMessage);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
+connection.once("open", () => {
+  console.log("MongoDB connection established successfully.");
+  app.listen(port, () => {
+    console.log(`Server is listening on port ${port}.`);
+  });
 });

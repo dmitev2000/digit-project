@@ -21,11 +21,36 @@ export const getOrderById = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-}
+};
 
 export const getAllOrdersForUser = async (req, res, next) => {
   try {
     const orders = await Order.find();
+    res.status(200).json(orders);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getMostOrderedProduct = async (req, res, next) => {
+  try {
+    const orders = await Order.aggregate([
+      {
+        $unwind: "$products",
+      },
+      {
+        $group: {
+          _id: "$products.id",
+          totalAmount: { $sum: "$products.amount" },
+        },
+      },
+      {
+        $sort: { totalAmount: -1 },
+      },
+      {
+        $limit: 3,
+      },
+    ]);
     res.status(200).json(orders);
   } catch (error) {
     next(error);

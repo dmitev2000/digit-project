@@ -34,6 +34,21 @@ const Navbar = () => {
     let links = document.querySelectorAll(".nav-link-v1");
     let dropbtns = document.querySelectorAll(".dropbtn");
     if (
+      document.body.scrollTop > 150 ||
+      document.documentElement.scrollTop > 150
+    ) {
+      const btn = document.getElementById("scroll-top-btn");
+      if (btn) {
+        btn.style.opacity = 1;
+      }
+    } else {
+      const btn = document.getElementById("scroll-top-btn");
+      if (btn) {
+        btn.style.opacity = 0;
+      }
+    }
+
+    if (
       document.body.scrollTop > 40 ||
       document.documentElement.scrollTop > 40
     ) {
