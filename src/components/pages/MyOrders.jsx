@@ -18,7 +18,9 @@ const MyOrders = () => {
         withCredentials: true,
       })
       .then((res) => {
-        setOrders(res.data.filter(order => order.userID === authCtx.user._id));
+        setOrders(
+          res.data.filter((order) => order.userID === authCtx.user._id)
+        );
         setLoading(false);
       })
       .catch((err) => console.log(err));
@@ -40,7 +42,9 @@ const MyOrders = () => {
         {orders.length === 0 ? (
           <h3 className="text-muted my-5">You dont have any orders yet.</h3>
         ) : (
-          <OrderList orders={orders} />
+          <OrderList
+            orders={orders}
+          />
         )}
       </div>
     </>
