@@ -209,6 +209,11 @@ footer .platforms {
   font-weight: bold;
 }
 
+.top-products-link:hover {
+  color: white;
+  box-shadow: 0 0 25px #1f3933;
+}
+
 .gold, .silver, .bronze {
   display: flex;
   justify-content: flex-start;
