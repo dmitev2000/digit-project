@@ -69,7 +69,7 @@ const ManuPage = () => {
 
         { authCtx.user &&
           <div className="mb-5">
-            <Link className="top-products" to="/top-products">
+            <Link className="top-products-link" to="/top-products">
               Top 3 products
             </Link>
           </div>

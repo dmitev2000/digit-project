@@ -200,6 +200,15 @@ footer .platforms {
   margin-bottom: 25px;
 }
 
+.top-products-link {
+  text-decoration: none;
+  background-color: #1f3933;
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+
 .gold, .silver, .bronze {
   display: flex;
   justify-content: flex-start;
