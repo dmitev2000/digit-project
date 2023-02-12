@@ -6,12 +6,14 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [error , setError] = useState(null);
   const { dispatch } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
   });
   const handleLogin = async (e) => {
+    setError(null);
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
@@ -28,6 +30,7 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+      setError(err.response.data);
     }
   };
   const handleChange = (e) => {
@@ -69,6 +72,13 @@ const Login = () => {
           <span className="fw-bold text-muted">Don't have an account? </span>
           <Link to="/register">Sign up</Link>
           <br /> <br />
+          {error && (
+            <>
+              <span className="text-danger fw-bold mb-3">{error}</span>
+              <br />
+              <br />
+            </>
+          )}
           <button type="submit" className="btn btn-success">
             Sign in
           </button>

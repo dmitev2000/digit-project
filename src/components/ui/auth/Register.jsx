@@ -6,9 +6,11 @@ import { useState } from "react";
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    setError(null);
     e.preventDefault();
     await axios
       .post("http://localhost:5000/auth/register", {
@@ -16,8 +18,10 @@ const Register = () => {
         password: password,
       })
       .then((res) => {
-        console.log(res);
         navigate("/login");
+      })
+      .catch((err) => {
+        setError(err.response.data);
       });
   };
 
@@ -57,6 +61,13 @@ const Register = () => {
               }}
             />
           </div>
+          {error && (
+            <>
+              <span className="text-danger fw-bold mb-3">{error}</span>
+              <br />
+              <br />
+            </>
+          )}
           <button type="submit" className="btn btn-success">
             Sign up
           </button>
