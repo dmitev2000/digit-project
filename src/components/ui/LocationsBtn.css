@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: calc(100vh - 120px);
+    top: calc(100vh - 90px);
     right: 20px;
     box-shadow: 0 0 25px #04AA6D;
     border-radius: 15px;
@@ -12,11 +12,30 @@
     cursor: pointer;
     font-weight: bold;
     background-color: black;
+    animation: blink 1.5s linear 0.5s infinite;
 }
 
 .near-text {
     font-weight: bold;
     font-size: 18px;
+}
+
+@keyframes blink {
+    0% {
+        box-shadow: 0 0 0px #04AA6D;
+    }
+    25% {
+        box-shadow: 0 0 13px #04AA6D;
+    }
+    50% {
+        box-shadow: 0 0 25px #04AA6D;
+    }
+    75% {
+        box-shadow: 0 0 13px #04AA6D;
+    }
+    100% {
+        box-shadow: 0 0 0px #04AA6D;
+    }
 }
 
 @media screen and (max-width: 1200px) {

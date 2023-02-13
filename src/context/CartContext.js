@@ -18,7 +18,7 @@ export function CartContextProvider(props) {
 
   function addItemToCartHandler(item, amount) {
     setAllItems((items) => items + 1);
-    if (isItemInCartHandler(item.id)) {
+    if (isItemInCartHandler(item.id, item.size)) {
       let product = cartItems.find((i) => i.id === item.id);
       product.amount += amount;
     } else {
@@ -57,8 +57,8 @@ export function CartContextProvider(props) {
     return total;
   }
 
-  function isItemInCartHandler(itemId) {
-    return cartItems.some((item) => item.id === itemId);
+  function isItemInCartHandler(itemId, itemSize) {
+    return cartItems.some((item) => item.id === itemId && item.size === itemSize);
   }
 
   function emptyCartHandler() {

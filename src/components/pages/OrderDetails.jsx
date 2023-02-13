@@ -11,6 +11,23 @@ const OrderDetails = () => {
   const [products, setProducts] = useState([]);
   const { id } = useParams();
 
+  const removeDuplicates = (products) => {
+    const newList = [];
+    for (var i = 0; i < products.length; i++) {
+      var flag = false;
+      for (var j = 0; j < newList.length; j++) {
+        if (newList[j]._id === products[i]._id) {
+          flag = true;
+          break;
+        }
+      }
+      if (!flag) {
+        newList.push(products[i]);
+      }
+    }
+    return newList;
+  };
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/orders/${id}/`, {
@@ -50,15 +67,20 @@ const OrderDetails = () => {
         <br />
         <h3 className="fw-bold">Price: ${order.totalPrice}</h3>
         <br />
-        <h3 className="fw-bold">Ordered products:</h3>
+        <h3 className="fw-bold">List of ordered products:</h3>
         {order.products.map((p, i) => {
+          let pSize = "Normal";
+          if (p.size !== undefined) {
+            pSize = p.size;
+          }
           return (
             <h4 className="text-muted" key={i}>
-              {products[i] && products[i].title} x{p.amount}
+              * {products[i] && products[i].title}{" "}
+              <span className="fw-bold">x{p.amount}</span> (size: {pSize})
             </h4>
           );
         })}
-        <MenuItemList data={products} />
+        <MenuItemList data={removeDuplicates(products)} />
       </div>
     </>
   );

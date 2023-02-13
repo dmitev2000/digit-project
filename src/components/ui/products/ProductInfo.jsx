@@ -5,19 +5,29 @@ import ProductSizesList from "./ProductSizesList";
 import CartContext from "../../../context/CartContext";
 import { useContext } from "react";
 import { ReactNotifications, Store } from "react-notifications-component";
+import SizeContext from "../../../context/SizeContext";
 
 const ProductInfo = ({ product }) => {
   const cartCtx = useContext(CartContext);
+  const sizeCtx = useContext(SizeContext);
 
   function addHandler() {
     cartCtx.addItemToCart(
       {
         id: product._id,
         title: product.title,
-        price: product.price,
+        price: product.price * sizeCtx.additionalPriceMultiliper,
+        size: sizeCtx.sizeName,
       },
       1
     );
+    sizeCtx.updateValues("Normal", 1);
+    var sizes = document.getElementsByClassName(".size-list-item");
+    for (var i = 0; i < sizes.length; i++) {
+      if (sizes[i].classList.contains("border-for-size")) {
+        sizes[i].classList.remove("border-for-size");
+      }
+    }
     Store.addNotification({
       title: "Wonderful!",
       message: "Item added to cart successfully!",

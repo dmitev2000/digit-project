@@ -20,8 +20,8 @@ const Cart = () => {
       return;
     }
     const dataToSend = cartCtx.cartItems.map((product) => {
-      const { id, amount } = product;
-      return { id, amount };
+      const { id, amount, size } = product;
+      return { id, amount, size };
     });
     await axios
       .post(
@@ -76,6 +76,7 @@ const Cart = () => {
                     <th scope="col">#</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
+                    <th scope="col">Size</th>
                     <th scope="col">Price</th>
                     <th scope="col">Total Price</th>
                     <th scope="col">Remove item</th>
@@ -84,10 +85,11 @@ const Cart = () => {
                 <tbody>
                   {cartCtx.cartItems.map((element, index) => {
                     return (
-                      <tr key={element.id}>
+                      <tr key={element.id + element.size}>
                         <th scope="row">{index + 1}</th>
                         <td>{element.title}</td>
                         <td>{element.amount}</td>
+                        <td>{element.size === null ? "Normal" : element.size}</td>
                         <td>${element.price}</td>
                         <td>${element.price * element.amount}</td>
                         <td>
@@ -125,13 +127,12 @@ const Cart = () => {
                 </tbody>
                 <tfoot>
                   <tr className="text-end">
-                    <th colSpan={6}>
+                    <th colSpan={7}>
                       Total: <b>${cartCtx.totalPrice()}</b>
                     </th>
                   </tr>
-
                   <tr className="text-end">
-                    <th colSpan={6}>
+                    <th colSpan={7}>
                       <button
                         className="btn btn-danger"
                         onClick={() => {

@@ -233,6 +233,22 @@ footer .platforms {
   border-bottom: solid 20px #cd7f32;
 }
 
+.border-for-size {
+  border-bottom: solid 5px #1f3933;
+}
+
+.size-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.size-list-item:hover {
+  cursor: pointer;
+  border-bottom: solid 5px #04aa6d;
+}
+
 @media screen and (max-width: 1200px) {
   footer .grid {
     display: grid;

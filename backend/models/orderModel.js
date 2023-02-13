@@ -13,7 +13,7 @@ const schema = new mongoose.Schema(
     totalPrice: {
       type: Number,
       required: true,
-    },
+    }
   },
   { timestamps: true }
 );
